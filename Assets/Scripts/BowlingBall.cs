@@ -20,4 +20,9 @@ public class BowlingBallController : MonoBehaviour
     {
         bowlingBall.transform.rotation = Quaternion.Euler(90f, horizontalDirection.value, 0f);
     }
+
+    public void Bowl()
+    {
+        bowlingBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
+    }
 }
