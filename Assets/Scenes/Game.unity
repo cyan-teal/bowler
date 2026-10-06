@@ -1423,8 +1423,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1810035634}
         m_TargetAssemblyTypeName: BowlingBallController, Assembly-CSharp
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_MethodName: Bowl
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
