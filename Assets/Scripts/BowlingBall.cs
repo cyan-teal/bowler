@@ -1,11 +1,10 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BowlingBallController : MonoBehaviour
 {
     private GameObject bowlingBall;
-
-    public UnityEngine.UI.Slider aimer;
 
     void Start()
     {
@@ -14,7 +13,11 @@ public class BowlingBallController : MonoBehaviour
 
     void Update()
     {
-        bowlingBall.transform.rotation = Quaternion.Euler(90f, aimer.value, 0f);
-        print(bowlingBall.transform.rotation);
+
+    }
+
+    public void Aim(Slider horizontalDirection)
+    {
+        bowlingBall.transform.rotation = Quaternion.Euler(90f, horizontalDirection.value, 0f);
     }
 }
