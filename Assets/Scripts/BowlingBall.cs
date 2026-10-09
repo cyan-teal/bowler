@@ -6,6 +6,8 @@ public class BowlingBallController : MonoBehaviour
 {
     private GameObject bowlingBall;
 
+    public float bowlStrength;
+
     void Start()
     {
         bowlingBall = gameObject;
@@ -23,6 +25,10 @@ public class BowlingBallController : MonoBehaviour
 
     public void Bowl()
     {
-        bowlingBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
+        Vector3 forwardsVector = new Vector3(0, 1, 0);
+        Quaternion bowlingAngle = Quaternion.Euler(90f, bowlingBall.GetComponent<Rigidbody>().transform.eulerAngles.z, 0f);
+        Vector3 bowlingforce = bowlingAngle * forwardsVector * bowlStrength;
+        print(bowlingforce);
+        bowlingBall.GetComponent<Rigidbody>().AddForce(bowlingforce);
     }
 }
